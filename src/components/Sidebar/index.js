@@ -98,7 +98,6 @@ const Sidebar = () => {
                 </div>
 
             </div>
-            <Footer />
         </>
     );
 
