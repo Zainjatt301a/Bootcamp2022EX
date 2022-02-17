@@ -1,6 +1,6 @@
 const Monitizebutton = () => {
     return (
-        <div className="bg-blue-600 flex justify-center items-center rounded-2xl w-[400px] h-[60px]">
+        <div className="bg-blue-600 ml-5 flex justify-center items-center rounded-2xl w-[460px] h-[60px]">
             <button className="flex pl-7 h-[30px] justify-center items-center bg-white rounded-2xl">
                 <div className="">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

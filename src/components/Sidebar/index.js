@@ -41,7 +41,7 @@ const Sidebar = () => {
     return (
         <>
             <div className="container">
-                <div className='w-[320px] h-[350px] bg-blue-900 flex flex-col justify-start items-center ml-1	' >
+                <div className='w-[320px] h-[390px] bg-blue-900 flex flex-col justify-start items-center ml-1	' >
                     <div className='w-28 mt-3' >
                         <img src={logo} />
                     </div>

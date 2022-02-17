@@ -1,32 +1,95 @@
+// import './main.css'
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import React, { useState } from 'react';
 import './main.css'
+import 'react-quill/dist/quill.snow.css';
+import banner3 from '../../assets/banner3.jpg'
+
+
+const CustomToolbar = () => (
+    <div id="toolbar" className='bg-blue-600 rounded-t-2xl h-[40px]'>
+
+        <button className="ql-bold ql-stroke " />
+        <button className="ql-italic" />
+        <button className="ql-link" />
+
+
+    </div>
+);
+
+
 
 const Texteditor = () => {
-
-    const [text, setText] = useState("")
-
-    const handleChange = (e) => {
-        setText(e)
-    }
-
+    const [body, setBody] = useState()
     return (
-        <div className=' '>
+        <div className="text-editor w-[460px] ml-5">
+            <CustomToolbar />
             <ReactQuill
-
-                value={text}
-                onChange={handleChange}
-                modules={{
-                    toolbar: [
-                        ['bold', 'italic', 'link'],
-                    ],
-                }}
-
+                value={body}
+                onChange={(e) => setBody(e)}
+                placeholder={"Write Something"}
+                modules={Texteditor.modules}
+                formats={Texteditor.formats}
+                theme={"snow"} // pass false to use minimal theme
+                className="h-[80px]"
             />
+            <div className='flex items-center justify-between mt-2'>
+                <div className='flex flex-col'>
+                    <div>
+                        <h2>Stored on chain?</h2>
+                    </div>
+                    <div className='flex justify-between'>
+                        <div className='flex'>
+                            <div>
+                                <input type={'checkbox'} checked />
+                            </div>
+                            <div className='ml-1'>
+                                Sure
+                            </div>
+                        </div>
+                        <div className='flex'>
+                            <div>
+                                <input type={'checkbox'} />
+                            </div>
+                            <div className='ml-1'>
+                                Nope
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button className="flex justify-center w-[250px] h-[30px] items-center bg-blue-600 rounded-2xl">
+
+                        <h3 className='text-white'>Post</h3>
+
+                    </button>
+                </div>
+            </div>
+            <div className='mt-2 w-[460px]'>
+                <img src={banner3} className=" rounded-2xl h-[190px]" />
+            </div>
         </div>
-    )
+    );
 }
+
+
+Texteditor.modules = {
+    toolbar: {
+        container: "#toolbar",
+
+    },
+    clipboard: {
+        matchVisual: false,
+    }
+};
+
+
+Texteditor.formats = [
+    "bold",
+    "italic",
+    "link",
+
+];
 
 
 
