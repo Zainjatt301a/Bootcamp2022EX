@@ -1,10 +1,10 @@
 const Postsfilter = () => {
     return (
-        <div className='rounded-2xl p-4 h-[60px] mt-5 w-[460px] items-center flex justify-between bg-gray-100 '>
+        <div className='rounded-2xl p-4 h-[50%] mt-5 md:w-[100%] w-[90%] items-center flex justify-between bg-gray-100 '>
             <div className='text-blue-400 font-[500] text-[22px]'>
                 <h1>Posts</h1>
             </div>
-            <div className='flex justify-between items-center p-1 bg-blue-600 text-white rounded w-[120px]'>
+            <div className='flex justify-between items-center p-1 bg-blue-600 text-white rounded w-[40%]'>
                 <div className='ml-2'>
                     <h3>Latest</h3>
                 </div>

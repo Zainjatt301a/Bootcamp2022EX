@@ -11,11 +11,11 @@ const Footer = () => {
     { name: "Terms And Conditions" },
     ]
     return (
-        <div className="bg-blue-700 h-[50px]  flex justify-between items-center ">
+        <div className="bg-blue-700 h-12 mt-36  flex justify-between items-center ">
             <div className='ml-10'>
-                <img src={logo} width={60} />
+                <img src={logo} className="sm:w-20 w-12" />
             </div>
-            <div className='flex'>
+            <div className='flex sm:text-[14px] text-[10px]'>
                 {Pages.map((item) => {
                     return <ul className='flex'><li className='mr-3 text-white'>{item.name} </li></ul>
                 })}

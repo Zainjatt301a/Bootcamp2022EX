@@ -1,41 +1,28 @@
+import logo from '../../logo.svg'
 const ProfileCard = () => {
     return (
-        <div className="flex flex-col m-2 container  bg-white h-64 w-[300px] rounded-xl">
-            <div>
-                <img src="https://phantom-marca.unidadeditorial.es/7c4ccd41cb946352fe6e15a6c32773a1/crop/0x0/2041x1150/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/07/16415655339687.jpg" className="rounded-t-xl h-36 w-[350px]" />
-            </div>
-            <div className="h-64 flex items-center flex-col rounded-bl-[10px] rounded-br-[10px]
-            pb-[10px]  shadow-xl
-            ">
-                <div className="">
-                    <img src="https://im.indiatimes.in/content/2021/May/intro-1587390568_6092721e5baf5.jpg?w=725&h=408" className="border-[1px] border-gray-300 rounded-full h-20 p-1 mt-[-37px] w-20" />
+        <>
+            <div className="flex flex-col w-full  items-center h-auto bg-blue-600 " >
+                <div className="mt-6 mb-3.5">
+                    <img className="h-28 w-28 " src={logo} alt="" />
                 </div>
-                <div>
-                    <h1 className="text-blue-600 font-bold">Professor</h1>
-                </div>
-                <div>
-                    <h1 className="text-blue-300">Istanbul, Turkey</h1>
-                </div>
-                <div className="mt-4">
-                    <div className="flex justify-center mt-3">
-                        <p className="text-blue-300"><span className="text-blue-600">5K</span> Posts</p>
-                        <p className="text-blue-300"><span className="text-blue-600 m-1">500</span>Videos
-                        </p>
-                        <p className="text-blue-300"><span className="text-blue-600 m-1">40</span>Books</p>
+                <h1 className="text-white text-2xl font-medium">my2cents</h1>
+                <div className="w-[85%] mt-6">
+                    <div className="h-28 rounded-tl-2xl rounded-tr-2xl w-full bg-cover bg-no-repeat bg-coverphoto">
+                        <img src="https://phantom-marca.unidadeditorial.es/7c4ccd41cb946352fe6e15a6c32773a1/crop/0x0/2041x1150/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/07/16415655339687.jpg" className="rounded-t-xl h-28 w-[100%]" />
                     </div>
-                    <div className="flex justify-center mt-3">
-                        <p className="text-blue-300"><span className="text-blue-600">5K</span> Ideas</p>
-                        <p className="text-blue-300"><span className="text-blue-600 m-1">126</span> Introductions
-                        </p>
-                        <p className="text-blue-300"><span className="text-blue-600 m-1">626</span> Podcasts</p>
-
+                    <div className="flex flex-col h-24 w-full  border-b-2  items-center bg-white">
+                        <div className="relative  top-[-28px]">
+                            <img className="border-[1px] border-gray-300 rounded-full h-14 p-1 w-14" src="https://im.indiatimes.in/content/2021/May/intro-1587390568_6092721e5baf5.jpg?w=725&h=408" alt="" />
+                        </div>
+                        <h1 className="text-blue-600 text-lg mt-[-26px] font-bold">Professor</h1>
+                        <h2 className="text-blue-400 mb-4">Istanbul, Turkey</h2>
                     </div>
                 </div>
-
             </div>
+            {/* first secction done */}
 
-
-        </div>
+        </>
     )
 }
 export default ProfileCard

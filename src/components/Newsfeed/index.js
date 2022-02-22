@@ -8,56 +8,63 @@ import Monitizebutton from '../Monitizebutton'
 import Title from '../Title'
 import Texteditor from '../Texteditor'
 import Rightsidebar from '../Rightsidebar'
-
+import { useState } from "react";
+import { getPost } from '../../config/firebase'
+import { useEffect } from "react";
 const Newsfeed = () => {
+
+    const [post, setPost] = useState([])
+
+
+    useEffect(async () => {
+        const tempPosts = await getPost()
+        setPost(tempPosts)
+    }, [])
+
+
+    console.log(post, "POSTSSSSSSSSSSSSSS");
     return (
-        <div>
-            <Navbar />
-            <div className="w-[100%] mt-5 border-t-[1px] border-blue-400"></div>
-            <div className='flex'>
-                <div>
-                    <div className='m-5'>
-                        <img src={banner3} className=" rounded-2xl w-[460px] h-[190px]" />
-                    </div>
-                    <div className='m-5'>
-                        <Showingpostscount />
-                    </div>
-                    <div className='m-5'>
-                        <Postsfilter />
-                    </div>
-                    <div>
 
 
-                        <div>
-                            <Post />
-                        </div>
-                        <div>
-                            <Post />
-                        </div>
-                        <div>
-                            <Post />
-                        </div>
-                        <div className="w-[460px]">
-                            <div className="flex justify-center">
-                                <Pagination />
-                            </div>
-                            <div className="flex justify-center">
-                                <Monitizebutton />
-                            </div>
-                            <div className="flex justify-center mt-5">
-                                <Title name="Create a post" />
-                            </div>
-                            <div className="flex justify-center mt-5 ml-5">
-                                <Texteditor />
-                            </div>
-                        </div>
-                    </div>
+
+        <div className='flex w-full'>
+            <div>
+                <div className='m-5'>
+                    <img src={banner3} className=" rounded-2xl md:w-[100%] w-[90%] h-[20%]" />
                 </div>
-                <div className='mt-5'>
-                    <Rightsidebar />
+                <div className='m-5'>
+                    <Showingpostscount />
+                </div>
+                <div className='m-5'>
+                    <Postsfilter />
+                </div>
+                <div className='flex flex-col items-center'>
+
+
+                    {post.map((item) => {
+                        return <Post postText={item.description} title={item.title} like={item.like} dislike={item.dislike} views={item.views} bookmark={item.bookmark} img={item.img} topic={item.topic} />
+                    })}
+
+
+                    <div>
+                        <div className="flex justify-center">
+                            <Pagination />
+                        </div>
+                        <div className="flex justify-center">
+                            <Monitizebutton />
+                        </div>
+                        <div className="flex justify-center mt-5">
+                            <Title name="Create a post" />
+                        </div>
+                        <div className="flex justify-center mt-5 ml-5">
+                            <Texteditor />
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
+
     )
 }
 
