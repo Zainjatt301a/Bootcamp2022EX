@@ -1,13 +1,16 @@
 import React from 'react';
+import ThemeContextWrapper from './darkmode/Themewrapper';
 import ReactDOM from 'react-dom';
 import "./index.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeContextWrapper>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>{' '}
+  </ThemeContextWrapper>,
   document.getElementById('root')
 );
 

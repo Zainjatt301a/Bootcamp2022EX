@@ -15,7 +15,7 @@ const Newsfeed = () => {
 
     const [post, setPost] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage, setPostsPerPage] = useState(2)
+    const [postsPerPage, setPostsPerPage] = useState(3)
 
 
     useEffect(async () => {
@@ -50,12 +50,12 @@ const Newsfeed = () => {
                 </div>
                 <div className='flex flex-col items-center'>
 
-                    <div className='h-[40rem] overflow-scroll'>
-                        {currentPosts.map((item) => {
 
-                            return <Post item={item} />
-                        })}
-                    </div>
+                    {currentPosts.map((item) => {
+
+                        return <Post item={item} />
+                    })}
+
 
                     <div>
                         <div className="flex justify-center">

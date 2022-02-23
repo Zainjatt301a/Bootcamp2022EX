@@ -1,7 +1,7 @@
 const ActivityComponents = (props) => {
     return (
         <div>
-            <button class="md:w-48 w-32 h-12 bg-slate-200 text-black rounded-2xl hover:text-white hover:bg-blue-700 shadow-xl">
+            <button class="md:w-60 w-32 h-12 bg-slate-200 text-black rounded-2xl hover:text-white hover:bg-blue-700 shadow-xl">
                 <div className="justify-start ml-2 items-center flex">
                     <div>
                         {props.icon}

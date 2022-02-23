@@ -10,7 +10,7 @@ const Category = () => {
                 </div>
                 <div>
                     <button onClick={() => setActive(!active)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className={(active) ? "h-6 w-6 cursor-pointer transition duration-300" : "h-6 w-6 cursor-pointer rotate-180 transition duration-300"} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
