@@ -1,27 +1,19 @@
 import { useState } from "react";
 import { post } from "../../config/firebase";
 
-const Post = (props) => {
+const Post = ({ item }) => {
 
     const current = new Date();
     const date = `${current.toLocaleDateString()} ${current.toLocaleTimeString()}`;
 
-    const [like, setLike] = useState(0)
-
-
-    const incrementLike = () => {
-        setLike(like + 1)
-        post(like)
-    }
-
     return (
         <>
-            <div className="flex flex-col md:w-[90%] w-[80%] pb-2 mt-2  border-b-2 border-gray-300">
+            <div className="flex flex-col  md:w-[90%] w-[80%] pb-2 mt-2  border-b-2 border-gray-300">
                 <div className="flex flex-col">
                     <div className="flex justify-between items-center">
                         <div className="flex" >
-                            <img src={props.img} className=" rounded-full h-7  w-7 ml-[4px]" />
-                            <h1 className="ml-2 text-blue-700 font-[600]">{props.title}</h1>
+                            <img src={item.img} className=" rounded-full h-7  w-7 ml-[4px]" />
+                            <h1 className="ml-2 text-blue-700 font-[600]">{item.title}</h1>
                         </div>
 
                         <div className="bg-gray-100 rounded-2xl p-1">
@@ -29,11 +21,11 @@ const Post = (props) => {
                         </div>
                     </div>
                     <div className="text-[12px] font-[500] text-blue-500 ml-8 mt-[3px]">
-                        <p>{props.topic}</p>
+                        <p>{item.topic}</p>
                     </div>
                 </div>
                 <div className="ml-8 mt-4 text-[14px]">
-                    <p>{props.postText}</p>
+                    <p>{item.description}</p>
                 </div>
                 <div className="flex justify-between md:w-[90%] w-[80%] items-center ml-8 mt-5">
                     <div className="flex">
@@ -42,25 +34,25 @@ const Post = (props) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{props.views}</span>
+                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{item.views}</span>
                         </div>
                         <div className="flex items-center justify-center cursor-pointer">
-                            <svg onClick={incrementLike} xmlns="http://www.w3.org/2000/svg" className="md:h-6 md:w-6 w-4 h-4 ml-2 stroke-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="md:h-6 md:w-6 w-4 h-4 ml-2 stroke-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{props.like}</span>
+                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{item.like}</span>
                         </div>
                         <div className="flex items-center justify-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" className="md:h-6 md:w-6 w-4 h-4 ml-2 stroke-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{props.dislike}</span>
+                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{item.dislike}</span>
                         </div>
                         <div className="flex items-center justify-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" className="md:h-6 md:w-6 w-4 h-4 ml-2 stroke-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
-                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{props.bookmark}</span>
+                            <span className="ml-1 md:text-[14px] text-[12px] text-blue-500">{item.bookmark}</span>
                         </div>
                     </div>
                     <div className="flex mr-5">

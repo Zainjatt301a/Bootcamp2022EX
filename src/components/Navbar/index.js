@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Profiledropdown from "../Profiledropdown";
+
 
 const Navbar = () => {
     const [active, setActive] = useState(true)
@@ -42,7 +44,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div>
+            {/* <div>
                 <div className="w-[90%] ml-10 h-8 flex items-center rounded-2xl border-[1px] border-blue-300">
                     <div >
                         <img src="https://im.indiatimes.in/content/2021/May/intro-1587390568_6092721e5baf5.jpg?w=725&h=408" className=" rounded-full h-[25px]  w-[25px] ml-[4px]" />
@@ -55,9 +57,9 @@ const Navbar = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-
+            <Profiledropdown />
 
 
         </div>

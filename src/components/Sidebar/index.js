@@ -41,7 +41,7 @@ const Sidebar = () => {
     }
     return (
 
-        <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full h-[110rem] overflow-scroll overflow-x-hidden flex flex-col items-center">
             <ProfileCard />
 
 

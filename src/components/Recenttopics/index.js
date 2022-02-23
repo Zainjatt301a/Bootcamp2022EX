@@ -1,9 +1,10 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import Topic from "../Topic"
+import './main.css'
 
 const Recenttopics = () => {
     return (
-        <div className=" bg-gray-200 rounded-[10px] md:w-11/12 w-9/12 pb-3">
+        <div className=" bg-gray-200 scroll-smooth mt-2 rounded-[10px] md:w-11/12 w-9/12  pb-3">
             <div className="bg-blue-700 rounded-t-[10px] h-16 flex justify-between items-center">
                 <div className="ml-3">
                     <h2 className="text-white">Recent Topics</h2>
@@ -15,7 +16,7 @@ const Recenttopics = () => {
                     </svg>
                 </div>
             </div>
-            <div>
+            <div className='h-[100rem] overflow-scroll' >
                 <Topic title="Crypto Winter's" count="1243" />
                 <Topic title="Crypto Wars" count="1243" />
                 <Topic title="Lionel Messi sells NFT'S" count="1243" />
@@ -67,7 +68,7 @@ const Recenttopics = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

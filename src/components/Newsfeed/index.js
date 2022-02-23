@@ -14,6 +14,8 @@ import { useEffect } from "react";
 const Newsfeed = () => {
 
     const [post, setPost] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage, setPostsPerPage] = useState(2)
 
 
     useEffect(async () => {
@@ -22,7 +24,15 @@ const Newsfeed = () => {
     }, [])
 
 
-    console.log(post, "POSTSSSSSSSSSSSSSS");
+    // console.log(post, "POSTSSSSSSSSSSSSSS");
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = post.slice(indexOfFirstPost, indexOfLastPost)
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
     return (
 
 
@@ -30,7 +40,7 @@ const Newsfeed = () => {
         <div className='flex w-full'>
             <div>
                 <div className='m-5'>
-                    <img src={banner3} className=" rounded-2xl md:w-[100%] w-[90%] h-[20%]" />
+                    <img src={banner3} className=" rounded-2xl sm:w-[100%] w-[100%] h-[20%]" />
                 </div>
                 <div className='m-5'>
                     <Showingpostscount />
@@ -40,15 +50,16 @@ const Newsfeed = () => {
                 </div>
                 <div className='flex flex-col items-center'>
 
+                    <div className='h-[40rem] overflow-scroll'>
+                        {currentPosts.map((item) => {
 
-                    {post.map((item) => {
-                        return <Post postText={item.description} title={item.title} like={item.like} dislike={item.dislike} views={item.views} bookmark={item.bookmark} img={item.img} topic={item.topic} />
-                    })}
-
+                            return <Post item={item} />
+                        })}
+                    </div>
 
                     <div>
                         <div className="flex justify-center">
-                            <Pagination />
+                            <Pagination postsPerPage={postsPerPage} totalPosts={post.length} paginate={paginate} />
                         </div>
                         <div className="flex justify-center">
                             <Monitizebutton />

@@ -11,7 +11,7 @@ const Footer = () => {
     { name: "Terms And Conditions" },
     ]
     return (
-        <div className="bg-blue-700 h-12 mt-36  flex justify-between items-center ">
+        <div className="bg-blue-700 h-12 mt-60  flex justify-between items-center ">
             <div className='ml-10'>
                 <img src={logo} className="sm:w-20 w-12" />
             </div>

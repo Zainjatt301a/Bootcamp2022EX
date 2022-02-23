@@ -12,6 +12,7 @@ import Title from "./components/Title/index.js";
 import Texteditor from "./components/Texteditor/index.js";
 import Rightsidebar from "./components/Rightsidebar/index.js";
 import Recenttopics from "./components/Recenttopics/index.js";
+import './App.css'
 function App() {
   return (
     // <div>
@@ -37,17 +38,18 @@ function App() {
     //   {/* <Rightsidebar /> */}
     //   {/* <Recenttopics /> */}
     // </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col scroll-smooth">
       <div className="flex w-full  ">
         <aside className=" w-1/4 sm:block hidden	">
           <Sidebar />
         </aside>
+
         <div className="sm:w-3/4 w-full  h-full">
           <header className='w-full h-24'>
             <Navbar />
           </header>
           <div className='flex w-full border-t-[1px] border-gray-300'>
-            <div className='sm:w-8/12 w-11/12'>
+            <div className='sm:w-8/12 w-12/12'>
               <Newsfeed />
             </div>
             <div className='w-4/12 sm:block hidden'>
